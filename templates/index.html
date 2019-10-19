@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+  </head>
+  <body>
+    <h1>This is our first page</h1>
+    <h3>How awesome</h3>
+    <a href="{% url 'about' %}">About</a>
+    <ul>
+      <li>views.py</li>
+      <li>urls.py</li>
+      <li>templates</li>
+      <li>settings.py</li>
+    </ul>
+    <button onclick="buttonFunc()">Click Me</button>
+    <a href="{% url 'result' %}">Result</a>
+    <form action="{% url 'result' %}">
+      {% csrf_token %}
+      <input type="text" name="user_input">
+      <input type="submit" value="Click me">
+
+    </form>
+   <!-- <img src="{% static 'elephant.jpg' %}" alt=""> -->
+
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+
+  </body>
+</html>
